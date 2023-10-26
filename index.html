@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CRUD</title>
+  <link href="stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>Cadastro de clientes</header>
+    <button type='button' id='cadastro'>Novo cliente</button>
+    <table class="tableClient" id="tableClient">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Cidade</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+
+  <div class="modelo" id="modelo">
+    <div class="conteudo">
+    <header class="modal-header">
+        <h2>Novo Cliente</h2>
+        <span class="modal-close" id="modalClose">&#10006;</span>
+    </header>
+    <form id="form">
+      Nome <input type="text" id="nome" required>
+      Email <input type="email" id="email" required>
+      Telefone <input type="text" id="telefone" required>
+      Cidade <input type="text" id="cidade" required>
+    </form>
+    <footer>
+        <button id="salvar">salvar</button> 
+        <button id="cancelar">cancelar</button>
+    </footer>
+    </div>
+  </div>
+</body>
+<script src="script.js" defer></script>
+</html>
