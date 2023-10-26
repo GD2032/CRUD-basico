@@ -48,7 +48,6 @@ const clearFields = () => {
 const saveClient = () => {
     if (document.getElementById('form').reportValidity()) {
         const email = document.getElementById('email').value;
-        if(validateEmail(email)){
             const client = {
                 nome: document.getElementById('nome').value,
                 email: document.getElementById('email').value,
@@ -56,16 +55,18 @@ const saveClient = () => {
                 cidade: document.getElementById('cidade').value
             }
             const index = document.getElementById('nome').dataset.index
-            if (index == 'new') {
+            if ((index == 'new' || typeof index === "undefined") && validateEmail(client.email)){
+                console.log("create client");
                 createClient(client)
                 updateTable()
                 closeModal()
-            } else {
+            } else if(!(index == 'new') && !validateEmail(client.email)) {
+                console.log("update client");
                 updateClient(index, client)
                 updateTable()
                 closeModal()
             }
-        }
+
         else{
             alert("E-mail já cadastrado");
         }
