@@ -37,16 +37,15 @@ const clearFields = () => {
     const fields = document.querySelectorAll('.modal-field')
     fields.forEach(field => field.value = "")
     document.getElementById('nome').dataset.index = 'new'
-    document.querySelector(".header>h2").textContent  = 'Novo Cliente'
+    document.querySelector(".header>h2").textContent  = 'Novo Produto'
 }
 
 const saveClient = () => {
-        const email = document.getElementById('email').value;
             const client = {
                 nome: document.getElementById('nome').value,
-                email: document.getElementById('email').value,
-                telefone: document.getElementById('telefone').value,
-                cidade: document.getElementById('cidade').value
+                categoria: document.getElementById('categoria').value,
+                descricao: document.getElementById('descricao').value,
+                preco: document.getElementById('preco').value
             }
             const index = document.getElementById('nome').dataset.index
             if ((index == 'new' || typeof index === "undefined")){
@@ -66,9 +65,9 @@ const createRow = (client, index) => {
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
         <td>${client.nome}</td>
-        <td>${client.email}</td>
-        <td>${client.telefone}</td>
-        <td>${client.cidade}</td>
+        <td>${client.categoria}</td>
+        <td>${client.descricao}</td>
+        <td>${client.preco}</td>
         <td>
             <button type="button" class="button green" id="edit-${index}">Editar</button>
             <button type="button" class="button red" id="delete-${index}" >Excluir</button>
