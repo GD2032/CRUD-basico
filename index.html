@@ -10,7 +10,6 @@
 
 <body>
   <header>Cadastro de clientes</header>
-    <button type='button' id='cadastro'>Novo cliente</button>
     <table class="tableClient" id="tableClient">
       <thead>
         <tr>
@@ -25,19 +24,21 @@
       </tbody>
     </table>
 
+    <button type='button' id='cadastro'>Novo cliente</button>
+
   <div class="modelo" id="modelo">
-    <div class="conteudo">
-    <header class="modal-header">
+    <div class="container">
+    <header class="header">
         <h2>Novo Cliente</h2>
         <span class="modal-close" id="modalClose">&#10006;</span>
     </header>
-    <form id="form">
+    <form class="form" id="form">
       Nome <input type="text" id="nome" required>
       Email <input type="email" id="email" required>
       Telefone <input type="text" id="telefone" required>
       Cidade <input type="text" id="cidade" required>
     </form>
-    <footer>
+    <footer class="footer">
         <button id="salvar">salvar</button> 
         <button id="cancelar">cancelar</button>
     </footer>

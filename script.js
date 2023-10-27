@@ -1,7 +1,3 @@
-
-
-'use strict'
-
 const openModal = () => document.getElementById('modelo')
     .classList.add('ativo')
 
@@ -42,7 +38,7 @@ const clearFields = () => {
     const fields = document.querySelectorAll('.modal-field')
     fields.forEach(field => field.value = "")
     document.getElementById('nome').dataset.index = 'new'
-    document.querySelector(".modal-header>h2").textContent  = 'Novo Cliente'
+    document.querySelector(".header>h2").textContent  = 'Novo Cliente'
 }
 
 const saveClient = () => {
@@ -60,7 +56,7 @@ const saveClient = () => {
                 createClient(client)
                 updateTable()
                 closeModal()
-            } else if(!(index == 'new') && !validateEmail(client.email)) {
+            } else if(!(index == 'new')) {
                 console.log("update client");
                 updateClient(index, client)
                 updateTable()
@@ -124,7 +120,7 @@ const editClient = (index) => {
     const client = readClient()[index]
     client.index = index
     fillFields(client)
-    document.querySelector(".modal-header>h2").textContent  = `Editando ${client.nome}`
+    document.querySelector(".header>h2").textContent  = `Editando ${client.nome}`
     openModal()
 }
 
